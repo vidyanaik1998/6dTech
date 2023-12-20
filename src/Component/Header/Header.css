@@ -1,0 +1,63 @@
+.header{
+    background: black;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 12px 20px;
+}
+.d-flex{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+.gap-12{
+    gap: 12px;
+}
+.gap-30{
+    gap: 30px;
+}
+
+.header-icon{
+    color: white;
+    background: green;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.maintain{
+    border-radius: 27px;
+    background: #474444fc;
+    padding: 0 13px;
+}
+.profile{
+    position: relative;
+    cursor: pointer;
+}
+.profile p{
+    margin: auto;
+}
+.profile-dropdown{
+    text-align: center;
+    border-radius: 3px;
+    width: 136px;
+    color: white;
+    background: black;
+    top: 77px;
+    position: absolute;
+    right: 2px;
+    padding: 10px;
+}
+.padding-50{
+    padding-right:50px
+}
+.profile-dropdown p{
+    margin: auto;
+}
+
+@media screen and (max-width: 992px) {
+    .header-list{
+        display: none;
+    }
+}

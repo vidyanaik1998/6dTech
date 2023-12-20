@@ -1,0 +1,21 @@
+.payment-heading{
+    color: #084d08;
+    font-size: 30px;
+}
+.payment-container{
+     padding-bottom: 12px;  
+}
+.payment-section{
+ width: 25%;
+}
+.payment-title{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+@media screen and (max-width: 620px){
+    .payment-section{
+        width: 60%;
+       }
+}

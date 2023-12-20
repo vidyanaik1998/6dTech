@@ -1,0 +1,85 @@
+.form-container{
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 14px;
+    justify-content: space-between;
+}
+
+.form-section{
+    padding: 30px 38px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 40%;
+    border-radius: 10px;
+}
+.form-heading{
+    font-size: 30px;
+    margin: auto;
+}
+.inputwidth{
+    width: 49%;
+    display: grid;
+    padding-bottom: 14px;
+}
+.inputwidth label{
+    font-size: 16px;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.inputwidth input , textarea{
+    height: 30px;
+    background: #ffffff;
+    border: 1px solid #d9d9d9 !important;
+    border-radius: 6px;
+    transition: border 0.2s,box-shadow 0.2s;
+}
+.inputwidth textarea{
+    height: 81px;
+    width: 100%  !important;
+}
+
+.inputwidth:last-child{
+    width: 100%  !important;
+    padding-right: 0 !important;
+}
+.inputwidth select{
+    height: 34px;
+    background: #ffffff;
+    border: 1px solid #d9d9d9 !important;
+    border-radius: 6px;
+    transition: border 0.2s,box-shadow 0.2s;
+}
+
+
+.button-list{
+    display: flex;
+    gap: 30px;
+}
+.submit-button{
+    color: white;
+    border: 2px solid #f1e8e8;
+    padding: 10px 28px;
+    border-radius: 20px;
+}
+.bg-green{
+    background: #468946;
+}
+.bg-gray{
+    background-color: rgb(125 117 117);
+}
+
+@media screen and (max-width: 992px) {
+    .form-section{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 620px){
+    .form-container{
+        display: grid;
+    }
+    .inputwidth{
+        width: 100%;
+    }
+  }

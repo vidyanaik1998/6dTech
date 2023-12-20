@@ -1,23 +1,92 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Component/Header/Header';
+import Payment from './Component/Payment/Payment';
+import FormSection from './Component/Form/Form';
+import { useState } from 'react';
+import Footer from './Component/Footer/Footer';
+import { notification } from "antd";
 
 function App() {
+  const initialdata = {
+    items: [
+      {
+        name: 'receipt_number',
+        label: "Receipt Number",
+        type: 'TextField',
+        inputtype:'number' ,
+        required:true
+      },
+      {
+        name: 'transcation_id',
+        label: "Transcation Id",
+        type: 'TextField',
+        inputtype:'number' ,
+        required:true
+      },
+      {
+        name: 'amount',
+        label: "Amount",
+        type: 'TextField',
+        inputtype:'number' ,
+        required:true
+      },
+      {
+        name: 'date_paid',
+        label: "Date Paid",
+        type: 'Datepicker',
+        required:true
+      },
+      {
+        name: 'payment_type',
+        label: "Payment Type",
+        type: 'DropDown',
+        values: ['UPI', 'Internet Banking', 'Credit card'],
+        required:true
+      },
+      {
+        name: 'payor',
+        label: "Payor",
+        type: 'TextField',
+        inputtype:'text' ,
+        required:true
+      },
+      {
+        name: 'description',
+        label: "Description",
+        type: 'Textarea',
+        required:true
+      },
+    ],
+  };
+
+  const [inputDatas , setinputDatas] = useState(initialdata.items)
+
+  const [api, contextHolder] = notification.useNotification();
+
+  const openNotification = (data) => {
+    api.open({
+      message: "Payment Successful",
+      description:
+       `${data.payor} has payed ${data.amount} ` ,
+      duration: 0,
+    });
+  };
+  
+  const onFlexiSubmit = (data , e) => {
+    e.preventDefault();
+    console.log('Submitted Data:', data , Object.keys(data).length);
+    Object.keys(data).length ===7 && openNotification(data);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className='banner'>
+        <Payment />
+        <FormSection  onSubmit={onFlexiSubmit} config={inputDatas} />
+      </div>
+      <Footer />
+      {contextHolder}
     </div>
   );
 }
